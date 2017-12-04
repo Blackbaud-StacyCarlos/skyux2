@@ -10,6 +10,9 @@
     "dist"
   ],
   "scripts": {
+    "docs:base": "cd skyux-spa-documentation && npm install && cd ../ && npm run build && node ./scripts/setup-dist.js && cd skyux-spa-documentation",
+    "docs:serve": "npm run docs:base && skyux serve",
+    "docs:build": "npm run docs:base && skyux build --output-keep-alive",
     "build": "npm run clean:srctemp && node config/utils/stage-ts.js && cd .srctemp && ngc && cd ../ && npm run compile:sass && npm run copy:design-tokens && cd config/rollup && rollup -c rollup.config.js && rollup -c rollup.min.config.js && npm run clean:srctemp",
     "build:skyux": "skyux build --output-keep-alive",
     "ci": "npm run lint && npm run test:ci",
@@ -56,10 +59,8 @@
     "@angular/platform-browser": "4.3.6",
     "@angular/platform-browser-dynamic": "4.3.6",
     "@angular/router": "4.3.6",
-    "@blackbaud/skyux": "2.3.2",
     "@blackbaud/skyux-builder": "1.7.1",
     "@blackbaud/skyux-design-tokens": "0.0.8",
-    "@blackbaud/stache": "2.1.0",
     "@types/core-js": "0.9.41",
     "@types/jasmine": "2.5.47",
     "@types/node": "7.0.18",

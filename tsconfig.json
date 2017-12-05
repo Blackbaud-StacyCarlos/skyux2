@@ -1,7 +1,13 @@
 {
   "extends": "./node_modules/@blackbaud/skyux-builder/tsconfig",
   "compilerOptions": {
-    "module": "commonjs"
+    "module": "commonjs",
+    "baseUrl": ".",
+    "paths": {
+      "@blackbaud/skyux/dist/*": [
+        "./src/app/public/dist/*"
+      ]
+    }
   },
   "exclude": [
     "node_modules",

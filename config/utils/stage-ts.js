@@ -46,9 +46,11 @@ function writeTSConfig() {
       "baseUrl": "."
     },
     "files": [
-      "core.ts"
+      "core.ts",
+      "demo.ts"
     ],
     "exclude": [
+      "node_modules",
       "../node_modules"
     ],
     "compileOnSave": false,
